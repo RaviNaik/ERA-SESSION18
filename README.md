@@ -111,8 +111,24 @@
 31.0 M    Total params
 124.174   Total estimated model params size (MB)
 ```
+##### UNET - OXford Pet Dataset Samples
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/f8adccb1-71b6-442d-9b6a-f04c82fe1b69)
+
+##### MaxPool + ConvTranspose + Dice Loss
+
+**RESULTS**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/1b023fd7-a49a-4594-b0df-6dad96f43b8a)
+
+
+##### MaxPool + ConvTranspose + BCE Loss
+
+##### StrConv + ConvTranspose + BCE Loss
+
+##### StrConv + Upsample + Dice Loss
 
 #### VAE
+
+##### Model Summary
 ```python
 
    | Name             | Type              | Params
@@ -165,5 +181,22 @@
 20.3 M    Total params
 81.301    Total estimated model params size (MB)
 ```
-   
-        
+##### VAE MNIST Data samples
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/8c568a1f-a4ad-4a50-9838-1abd907c27d2)
+
+##### VAE MNIST Training log
+
+##### VAE MNIST Results
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/2b2273e3-4cd3-4b05-b3a8-b7064999a396)
+
+##### VAE CIFAR Data samples
+
+##### VAE CIFAR Training log
+
+##### VAE CIFAR Results
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/700992ad-4593-4baa-a352-065d68e34324)
+
+
+
+
+
