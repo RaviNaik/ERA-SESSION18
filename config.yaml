@@ -1,0 +1,24 @@
+root:
+  project_path: /home/ravi.naik/learning/era/s18
+  data_path: ${root.project_path}/data
+  logs: ${root.project_path}/logs
+  models: ${root.project_path}/models
+unet:
+  data: ${root.data_path}/unet
+  models: ${root.models}/unet
+  logs: ${root.logs}/unet
+  lr: 1e-4
+  batch_size: 64
+  epochs: 30
+
+vae:
+  data:
+    cifar: ${root.data_path}/vae/cifar
+    mnist: ${root.data_path}/vae/mnist
+  models: ${root.models}/vae
+  logs: ${root.logs}/vae
+  lr: 1e-4
+  batch_size: 256
+  epochs: 30
+  
+

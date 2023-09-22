@@ -1,58 +1,54 @@
 from typing import Any
-import torch
-from torch import nn
 from lightning.pytorch.utilities.types import EVAL_DATALOADERS, TRAIN_DATALOADERS
-from torchvision.datasets import CIFAR10
-from torchvision import transforms
+from torchvision.datasets import OxfordIIITPet
 from torch.utils.data import Dataset, DataLoader
 from lightning import LightningDataModule
 
-transform = transforms.Compose([transforms.ToTensor()])
 
-
-class CifarDataset(Dataset):
+class OxfordPetDataset(Dataset):
     def __init__(
-        self, path="./data", train=True, transforms=None, num_classes=10
+        self, path="./data", split="trainval", transforms=None, mask_transforms=None
     ) -> None:
         super().__init__()
-        self.data = CIFAR10(path, download=True, train=train, transform=transforms)
-        self.num_classes = num_classes
+        self.data = OxfordIIITPet(root=path, split=split, target_types="segmentation")
+        self.transforms = transforms
+        self.mask_transforms = mask_transforms
 
     def __len__(self):
         return len(self.data)
 
     def __getitem__(self, index) -> Any:
         image = self.data[index][0]
-        label = self.data[index][1]
-        label_onehot = nn.functional.one_hot(
-            torch.tensor(label, dtype=torch.long), num_classes=self.num_classes
-        )
+        mask = self.data[index][1]
 
-        return image, label_onehot
+        if self.transforms is not None:
+            image = self.transforms(image)
+            mask = self.transforms(mask)
+        return image, mask
 
 
-class CifarDataModule(LightningDataModule):
+class OxfordPetDataModule(LightningDataModule):
     def __init__(
-        self, path="./data", transforms=None, num_classes=10, batch_size=32
+        self, path="./data", transforms=None, mask_transforms=None, batch_size=32
     ) -> None:
         super().__init__()
         self.path = path
         self.transforms = transforms
-        self.num_classes = num_classes
+        self.mask_transforms = mask_transforms
         self.batch_size = batch_size
 
     def setup(self, stage: str = None) -> None:
-        self.train_dataset = CifarDataset(
+        self.train_dataset = OxfordPetDataset(
             path=self.path,
-            train=True,
+            split="trainval",
             transforms=self.transforms,
-            num_classes=self.num_classes,
+            mask_transforms=self.mask_transforms,
         )
-        self.val_dataset = CifarDataset(
+        self.val_dataset = OxfordPetDataset(
             path=self.path,
-            train=False,
+            split="test",
             transforms=self.transforms,
-            num_classes=self.num_classes,
+            mask_transforms=self.mask_transforms,
         )
 
     def train_dataloader(self) -> TRAIN_DATALOADERS:

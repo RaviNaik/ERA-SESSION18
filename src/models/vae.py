@@ -9,12 +9,23 @@ from pl_bolts.models.autoencoders.components import (
 
 
 class VAE(L.LightningModule):
-    def __init__(self, enc_out_dim=512, latent_dim=256, input_height=32, num_class=10):
+    def __init__(
+        self,
+        enc_out_dim=512,
+        in_channels=3,
+        latent_dim=256,
+        input_height=32,
+        num_class=10,
+    ):
         super().__init__()
-
+        self.in_channels = in_channels
         self.save_hyperparameters()
 
         # encoder, decoder
+        self.prepare = nn.Conv2d(in_channels, 3, 3, padding=1)
+        self.prepare_out = nn.Sequential(
+            nn.ConvTranspose2d(3, 3, 5, 1), nn.Conv2d(3, in_channels, 3, padding=1)
+        )
         self.encoder = resnet18_encoder(False, False)
         self.combine = nn.Linear(enc_out_dim + num_class, enc_out_dim)
         self.decoder = resnet18_decoder(
@@ -33,6 +44,8 @@ class VAE(L.LightningModule):
 
     def forward(self, x, label):
         # encode x to get the mu and variance parameters
+        if self.in_channels != 3:
+            x = self.prepare(x)
         x_encoded = self.encoder(x)
 
         x_combined = self.combine(torch.concat((x_encoded, label), dim=1))
@@ -46,6 +59,8 @@ class VAE(L.LightningModule):
 
         # decoded
         x_hat = self.decoder(z)
+        if self.in_channels != 3:
+            x_hat = self.prepare_out(x_hat)
         return x_hat, z, mu, std
 
     def configure_optimizers(self):
@@ -94,8 +109,10 @@ class VAE(L.LightningModule):
                 "kl": kl.mean(),
                 "recon_loss": recon_loss.mean(),
                 "reconstruction": recon_loss.mean(),
-                "kl": kl.mean(),
-            }
+            },
+            prog_bar=True,
+            on_step=True,
+            on_epoch=True,
         )
 
         return elbo
