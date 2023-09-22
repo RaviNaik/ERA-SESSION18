@@ -115,16 +115,26 @@
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/f8adccb1-71b6-442d-9b6a-f04c82fe1b69)
 
 ##### MaxPool + ConvTranspose + Dice Loss
+**Training log**
 
 **RESULTS**
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/1b023fd7-a49a-4594-b0df-6dad96f43b8a)
 
 
 ##### MaxPool + ConvTranspose + BCE Loss
+**Training log**
+
+**RESULTS**
 
 ##### StrConv + ConvTranspose + BCE Loss
+**Training log**
+
+**RESULTS**
 
 ##### StrConv + Upsample + Dice Loss
+**Training log**
+
+**RESULTS**
 
 #### VAE
 
