@@ -196,7 +196,8 @@
 
 ##### VAE MNIST Training log
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/e4427bc3-59a1-42fe-b54e-8768a55c7df0)
-
+**TensorBoard Plots**
+![image](https://github.com/RaviNaik/ERA-SESSION18/blob/main/vae_mnist_tb.png)
 ##### VAE MNIST Results
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/2b2273e3-4cd3-4b05-b3a8-b7064999a396)
 
@@ -205,6 +206,8 @@
 
 ##### VAE CIFAR Training log
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/ac8fc51c-6ea8-44a9-b9f8-bda4447b9901)
+**TensorBoard Plots**
+![image](https://github.com/RaviNaik/ERA-SESSION18/blob/main/vae_cifar_tb.png)
 
 ##### VAE CIFAR Results
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/700992ad-4593-4baa-a352-065d68e34324)
