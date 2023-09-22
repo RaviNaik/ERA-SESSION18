@@ -185,13 +185,16 @@
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/8c568a1f-a4ad-4a50-9838-1abd907c27d2)
 
 ##### VAE MNIST Training log
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/e4427bc3-59a1-42fe-b54e-8768a55c7df0)
 
 ##### VAE MNIST Results
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/2b2273e3-4cd3-4b05-b3a8-b7064999a396)
 
 ##### VAE CIFAR Data samples
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/be4af0a4-fa8a-41d1-8097-d63ed475ff2c)
 
 ##### VAE CIFAR Training log
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/ac8fc51c-6ea8-44a9-b9f8-bda4447b9901)
 
 ##### VAE CIFAR Results
 ![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/700992ad-4593-4baa-a352-065d68e34324)
