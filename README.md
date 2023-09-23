@@ -116,25 +116,41 @@
 
 ##### MaxPool + ConvTranspose + Dice Loss
 **Training log**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/ae5c2e0d-346e-4f2d-978f-43591c0b4d19)
+**TensorBoard Plots**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/3837574b-0b97-4efb-abe1-fa8210b0d976)
 
 **RESULTS**
-![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/1b023fd7-a49a-4594-b0df-6dad96f43b8a)
-
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/0884ecfa-5afb-42d5-b32d-c341db1d4354)
 
 ##### MaxPool + ConvTranspose + BCE Loss
 **Training log**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/d8691047-d3aa-477e-aca0-fb02c1518cc2)
+**TensorBoard Plots**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/05dece75-60e9-4d74-9e75-46bfc3178705)
 
 **RESULTS**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/544729e7-3b2d-4907-a2c5-2c7c36136580)
 
 ##### StrConv + ConvTranspose + BCE Loss
 **Training log**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/f67a7421-caca-4680-b6a2-012d269a1020)
+**TensorBoard Plots**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/d2a8d4bc-0337-4d14-9612-4d2e20f33129)
+
 
 **RESULTS**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/6ad6b226-532c-4c3f-ab59-10e445b466bb)
 
 ##### StrConv + Upsample + Dice Loss
 **Training log**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/14b223d4-6650-43f6-aa9f-dbf29f6466bb)
+**TensorBoard Plots**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/bfc088ab-6557-4046-a1dd-553f6af66a4a)
+
 
 **RESULTS**
+![image](https://github.com/RaviNaik/ERA-SESSION18/assets/23289802/eee805fc-f0ed-4c3f-af85-31e1a9c9040b)
 
 #### VAE
 
